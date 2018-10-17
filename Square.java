@@ -14,13 +14,16 @@ public class Square
     private int yPosition;
     private String color;
     private boolean isVisible;
+    private int height;
+    private int width;
 
     /**
      * Create a new square at default position with default color.
      */
     public Square()
     {
-        size = 60;
+        height = 60;
+        width = 60;
         xPosition = 310;
         yPosition = 120;
         color = "red";
@@ -154,6 +157,14 @@ public class Square
         size = newSize;
         draw();
     }
+    
+    public void changeSize2(int newHeight, int newWidth)
+    {
+        erase();
+        height = newHeight;
+        width = newWidth;
+        draw();
+    }
 
     /**
      * Change the color. Valid colors are "red", "yellow", "blue", "green",
@@ -173,7 +184,7 @@ public class Square
         if(isVisible) {
             Canvas canvas = Canvas.getCanvas();
             canvas.draw(this, color,
-                        new Rectangle(xPosition, yPosition, size, size));
+                        new Rectangle(xPosition, yPosition, width, height));
             canvas.wait(10);
         }
     }
