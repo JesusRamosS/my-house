@@ -16,6 +16,7 @@ public class Picture
     private Square window;
     private Triangle roof;
     private Circle sun;
+    private Person habitante;
 
     /**
      * Constructor for objects of class Picture
@@ -109,6 +110,13 @@ public class Picture
             for (int i = 1; i <= 140; i++) {
                 sun.slowMoveVertical(1);
             }
+                habitante = new Person();
+                habitante.moveHorizontal(-300);
+                habitante.moveVertical(10);
+                habitante.makeVisible();
+                    for (int i = 1; i <= 170; i++) {
+                        habitante.slowMoveHorizontal(1);
+                    }
         }
     }
 }
