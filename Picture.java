@@ -98,4 +98,17 @@ public class Picture
             sun.changeColor("yellow");
         }
     }
+    
+        /**
+     * Change this picture to move the sun down
+     */
+    public void Atardecer()
+    {
+        if (wall != null)   // only if it's painted already...
+        {
+            for (int i = 1; i <= 140; i++) {
+                sun.slowMoveVertical(1);
+            }
+        }
+    }
 }
